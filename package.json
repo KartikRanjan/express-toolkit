@@ -86,6 +86,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/KartikRanjan/express-toolkit.git"
+        "url": "git+https://github.com/KartikRanjan/express-toolkit.git"
     }
 }
