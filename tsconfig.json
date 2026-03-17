@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "declaration": true,
+        "outDir": "./dist/esm",
+        "rootDir": "./src",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": ".",
+        "paths": {
+            "@kartik/express-toolkit": ["./src/index.ts"],
+            "@kartik/express-toolkit/swagger": ["./src/swagger/index.ts"]
+        }
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist"]
+}
