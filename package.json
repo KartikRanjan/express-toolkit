@@ -1,5 +1,5 @@
 {
-    "name": "express-toolkit",
+    "name": "xpress-toolkit",
     "version": "1.0.0",
     "description": "A comprehensive utility package for Express applications",
     "type": "module",
