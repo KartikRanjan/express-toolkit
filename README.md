@@ -39,32 +39,24 @@ const loginBodySchema = z.object({
     password: z.string().min(8),
 });
 
-app.post(
-    '/login',
-    validateRequest({ body: loginBodySchema }),
-    (req, res) => {
-        // By default, validated data is stored in `req.validated`
-        const { email, password } = req.validated.body as z.infer<typeof loginBodySchema>;
-        res.json({ success: true, email });
-    }
-);
+app.post('/login', validateRequest({ body: loginBodySchema }), (req, res) => {
+    // By default, validated data is stored in `req.validated`
+    const { email, password } = req.validated.body as z.infer<typeof loginBodySchema>;
+    res.json({ success: true, email });
+});
 ```
 
 **Mutation Mode**: You can optionally mutate the original request object (e.g., `req.body`, `req.query`, `req.params`) with the validated and transformed data.
 
 ```typescript
-app.post(
-    '/login',
-    validateRequest({ body: loginBodySchema }, { mode: 'mutate' }),
-    (req, res) => {
-        // Now `req.body` contains the validated payload
-        const { email, password } = req.body;
-        res.json({ success: true, email });
-    }
-);
+app.post('/login', validateRequest({ body: loginBodySchema }, { mode: 'mutate' }), (req, res) => {
+    // Now `req.body` contains the validated payload
+    const { email, password } = req.body;
+    res.json({ success: true, email });
+});
 ```
 
-*Note: For TypeScript to recognize `req.validated`, import the types: `import 'xpress-toolkit/types/express';`*
+_Note: For TypeScript to recognize `req.validated`, import the types: `import 'xpress-toolkit/types/express';`_
 
 ---
 
@@ -82,11 +74,13 @@ app.get('/broken', (req, res) => {
 });
 
 // Use the global error handler at the end of your middleware chain
-app.use(globalErrorHandler({
-    // Optional: Attach your logger to log errors automatically
-    // logger: myLogger,
-    // includeStack: process.env.NODE_ENV === 'development',
-}));
+app.use(
+    globalErrorHandler({
+        // Optional: Attach your logger to log errors automatically
+        // logger: myLogger,
+        // includeStack: process.env.NODE_ENV === 'development',
+    }),
+);
 ```
 
 The error response will look like this:
@@ -114,12 +108,14 @@ import { createLogger, requestLogger } from 'xpress-toolkit';
 const logger = createLogger({ level: 'info' });
 
 // 2. Attach the request logger middleware
-app.use(requestLogger({
-    logger,
-    logQuery: true, // Log URL queries (default: true)
-    logBody: false, // Log request bodies (default: false, use with caution!)
-    requestIdHeader: 'x-request-id', // Optional correlation ID
-}));
+app.use(
+    requestLogger({
+        logger,
+        logQuery: true, // Log URL queries (default: true)
+        logBody: false, // Log request bodies (default: false, use with caution!)
+        requestIdHeader: 'x-request-id', // Optional correlation ID
+    }),
+);
 ```
 
 ---

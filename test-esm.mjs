@@ -1,5 +1,5 @@
-import { AppError } from '@kartik/express-toolkit';
-import { setupSwagger } from '@kartik/express-toolkit/swagger';
+import { AppError } from 'xpress-toolkit';
+import { setupSwagger } from 'xpress-toolkit/swagger';
 
 console.log(typeof AppError);
 console.log(typeof setupSwagger);

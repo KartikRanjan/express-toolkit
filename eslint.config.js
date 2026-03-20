@@ -6,7 +6,17 @@ import prettierPlugin from 'eslint-plugin-prettier';
 
 export default [
     {
-        ignores: ['node_modules', 'dist', 'build', 'coverage', '*.config.js', 'drizzle.config.ts', 'examples/**', '*.d.ts', 'test-*'],
+        ignores: [
+            'node_modules',
+            'dist',
+            'build',
+            'coverage',
+            '*.config.js',
+            'drizzle.config.ts',
+            'examples/**',
+            '*.d.ts',
+            'test-*',
+        ],
     },
 
     js.configs.recommended,
@@ -66,7 +76,10 @@ export default [
             Clean code
             */
             'no-unused-vars': 'off',
-            '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+            '@typescript-eslint/no-unused-vars': [
+                'warn',
+                { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+            ],
         },
     },
     {

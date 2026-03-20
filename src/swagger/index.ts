@@ -6,7 +6,7 @@ function checkDependencies() {
         require.resolve('swagger-ui-express');
     } catch (e) {
         throw new Error(
-            "@kartik/express-toolkit/swagger requires '@asteasolutions/zod-to-openapi' and 'swagger-ui-express' as peer dependencies. Please install them to use this module.",
+            "xpress-toolkit/swagger requires '@asteasolutions/zod-to-openapi' and 'swagger-ui-express' as peer dependencies. Please install them to use this module.",
             { cause: e },
         );
     }

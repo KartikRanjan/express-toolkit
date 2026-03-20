@@ -12,8 +12,8 @@
         "forceConsistentCasingInFileNames": true,
         "baseUrl": ".",
         "paths": {
-            "@kartik/express-toolkit": ["./src/index.ts"],
-            "@kartik/express-toolkit/swagger": ["./src/swagger/index.ts"]
+            "xpress-toolkit": ["./src/index.ts"],
+            "xpress-toolkit/swagger": ["./src/swagger/index.ts"]
         }
     },
     "include": ["src/**/*"],

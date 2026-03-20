@@ -1,4 +1,4 @@
-// Main entry point for @kartik/express-toolkit
+// Main entry point for xpress-toolkit
 // Root exports should remain focused on non-optional features.
 
 export * from './errors/AppError.js';

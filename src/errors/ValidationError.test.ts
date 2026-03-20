@@ -13,7 +13,7 @@ describe('ValidationError', () => {
         expect(error).toBeInstanceOf(AppError);
         expect(error.name).toBe('ValidationError');
         expect(error.statusCode).toBe(400);
-        expect(error.code).toBe('VALIDATION_ERROR');
+        expect(error.errorCode).toBe('VALIDATION_ERROR');
         expect(error.expose).toBe(true);
         expect(error.details).toEqual(details);
     });

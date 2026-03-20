@@ -6,7 +6,7 @@ describe('AppError', () => {
         const error = new AppError('Something went wrong');
         expect(error.message).toBe('Something went wrong');
         expect(error.statusCode).toBe(500);
-        expect(error.code).toBe('INTERNAL_SERVER_ERROR');
+        expect(error.errorCode).toBe('INTERNAL_SERVER_ERROR');
         expect(error.expose).toBe(false);
         expect(error.isOperational).toBe(true);
     });

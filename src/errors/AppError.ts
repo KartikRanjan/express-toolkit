@@ -1,6 +1,6 @@
 export class AppError extends Error {
     statusCode: number;
-    code: string;
+    errorCode: string;
     details?: unknown;
     expose: boolean;
     isOperational: boolean;
@@ -8,13 +8,13 @@ export class AppError extends Error {
     constructor(
         message: string,
         statusCode = 500,
-        code = 'INTERNAL_SERVER_ERROR',
+        errorCode = 'INTERNAL_SERVER_ERROR',
         details?: unknown,
     ) {
         super(message);
         this.name = 'AppError';
         this.statusCode = statusCode;
-        this.code = code;
+        this.errorCode = errorCode;
         this.details = details;
         this.expose = statusCode < 500;
         this.isOperational = true;

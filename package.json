@@ -1,11 +1,21 @@
 {
     "name": "xpress-toolkit",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A comprehensive utility package for Express applications",
     "type": "module",
     "main": "./dist/cjs/index.js",
     "module": "./dist/esm/index.js",
     "types": "./dist/esm/index.d.ts",
+    "typesVersions": {
+        "*": {
+            "swagger": [
+                "./dist/esm/swagger/index.d.ts"
+            ],
+            "types/express": [
+                "./src/types/express.d.ts"
+            ]
+        }
+    },
     "exports": {
         ".": {
             "types": "./dist/esm/index.d.ts",
